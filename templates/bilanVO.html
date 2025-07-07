@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Document</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            margin: 0;
+        }
+        .header, .footer {
+            text-align: center;
+            padding: 10px;
+        }
+        .header img {
+            max-width: 150px;
+            height: auto;
+        }
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            font-size: 12px;
+        }
+        .content {
+            margin: 20px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #e7e7dd;
+            width: 30%; /* Reduce the width of the th column */
+        }
+        td {
+            width: 70%; /* Increase the width of the td column */
+        }
+        .tableAmortisseursDisquesPlaquettes th {
+            background-color: #e7e7dd;
+        }
+
+        .tableAmortisseursDisquesPlaquettes th.textCell {
+            width: 20%;
+        }
+
+        .tableAmortisseursDisquesPlaquettes td.textCell {
+            width: 20%;
+        }
+
+        .tableAmortisseursDisquesPlaquettes th.photosCell {
+            width: 10%;
+            text-align: center;
+        }
+
+        .tableAmortisseursDisquesPlaquettes td.photosCell {
+            width: 40%;
+            vertical-align: top;
+        }
+
+        .tableAmortisseursDisquesPlaquettes img {
+            width: 200px;
+            height: auto;
+            margin: 5px;
+        }
+
+
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .photo-exterieure {
+            width: 60%;
+            height: auto;
+            margin: 10px auto; /* Center horizontally */
+            border-radius: 25px;
+            display: block; /* Ensure the image is treated as a block element */
+        }
+        .photo {
+            width: 200px;
+            height: auto;
+            margin: 10px;
+        }
+        .photosPneusJantes {
+            width: 60%;
+            height: auto;
+            margin: 10px;
+            display: inline-block;
+            vertical-align: top; /* Aligns the images at the top */
+        }
+        .photosDessousVoiture {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px; /* espace entre les images */
+        }
+
+        .photosDessousVoiture img {
+            width: calc(50% - 10px); /* 2 images par ligne avec un peu de marge */
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .page-break {
+            page-break-before: always;
+            break-before: page;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1 class="title">{{bilanVO}}</h1>
+        <div>
+            {{#each photos}}
+              <img class="photo-exterieure" src="{{this.url}}" />
+            {{/each}}
+        </div>
+        <h2>Informations du Véhicule</h2>
+        <table>
+            <tr>
+                <th>Marque</th>
+                <td>{{marque}}</td>
+            </tr>
+            <tr>
+                <th>Modèle</th>
+                <td>{{modele}}</td>
+            </tr>
+            <tr>
+                <th>Version</th>
+                <td>{{version}}</td>
+            </tr>
+            <tr>
+                <th>Année</th>
+                <td>{{annee}}</td>
+            </tr>
+            <tr>
+                <th>Énergie</th>
+                <td>{{energie}}</td>
+            </tr>
+            <tr>
+                <th>Numéro VIN</th>
+                <td>{{vin}}</td>
+            </tr>
+            <tr>
+                <th>Référence</th>
+                <td>{{reference}}</td>
+            </tr>
+        </table>
+        <div class="page-break"></div>
+        <h2>Pneus: informations</h2>
+        <table>
+            <tr>
+                <th>État des pneus</th>
+                <td>{{etatPneus}}</td>
+            </tr>
+            <tr>
+                <th>indice de vitesse</th>
+                <td>{{indiceVitessePneus}}</td>
+            </tr>
+            <tr>
+                <th>indice de charge</th>
+                <td>{{indiceChargePneus}}</td>
+            </tr>
+            <tr>
+                <th>Photos des Pneus</th>
+                <td>
+                    {{#each photosPneusJantes}}
+                    <img class="photosPneusJantes" src="{{this.url}}" />
+                    {{/each}}
+                </td>
+            </tr>
+        </table>
+        <div class="page-break"></div>
+        <h2>Amortisseurs, disques et plaquettes</h2>
+        <table class="tableAmortisseursDisquesPlaquettes">
+            <tr>
+              <th class="textCell">Anomalie des amortisseurs</th>
+              <td class="textCell">{{anomalieAmortisseurs}}</td>
+              <th class="photosCell">Photos Amortisseurs</th>
+              <td class="photosCell">
+                {{#each photosAmortisseurs}}
+                  <img src="{{this.url}}" />
+                {{/each}}
+              </td>
+            </tr>
+            <tr>
+              <th class="textCell">État des disques et plaquettes</th>
+              <td class="textCell">{{etatDisquesPlaquettes}}</td>
+              <th class="photosCell">Photos Disques & Plaquettes</th>
+              <td class="photosCell">
+                {{#each photosDisquesPlaquettes}}
+                  <img src="{{this.url}}" />
+                {{/each}}
+              </td>
+            </tr>
+            <tr>
+              <th class="textCell">Raison du changement des disques ou des plaquettes</th>
+              <td class="textCell">{{raisonChangementDisquesPlaquettes}}</td>
+              <th class="photosCell"></th>
+              <td class="photosCell"></td>
+            </tr>
+          </table>
+          <div class="page-break"></div>
+        <h2>Dessous de voiture</h2>
+            <div class="photosDessousVoiture">
+                {{#each photosDessousVoiture}}
+                <img src="{{this.url}}" alt="Photo Dessous de voiture" />
+                {{/each}}
+            </div>
+          <div class="page-break"></div>
+    </div>
+
+</body>
+</html>

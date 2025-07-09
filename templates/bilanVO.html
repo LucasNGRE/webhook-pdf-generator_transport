@@ -10,6 +10,155 @@
             padding: 20px;
             margin: 0;
         }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        h2 {
+            font-size: 28px;
+            margin-top: 20px;
+            margin-bottom: 50px;
+            color: #e62246; /* Couleur rouge */
+            text-transform: uppercase;
+        }
+        h3 {
+            font-size: 22px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: black; /* Couleur rouge */
+            font-weight: bold;
+        }
+        .trait {
+            width: 60px;          /* Longueur du trait */
+            height: 6px;           /* Épaisseur du trait */
+            background-color: #e62246;  /* Couleur du trait */
+            margin: 10px 0;        /* Marge verticale (optionnel) */
+            border-radius: 2px;    /* Arrondir légèrement les bords (optionnel) */
+        }
+        .disclaimer {
+            font-size: 12px;
+            color: #555;
+            margin-top: 20px;
+            line-height: 1.5;
+            border: 1px solid #000;       /* Bordure fine noire */
+            padding: 10px;                /* Espace intérieur pour respirer */
+            border-radius: 4px;           /* Optionnel : coins légèrement arrondis */
+            background-color: #f9f9f9;    /* Optionnel : léger fond pour distinguer */
+        }
+
+        #page-accueil {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* espace entre le premier contenu et le dernier */
+            height: 80vh; /* hauteur = hauteur de la fenêtre/page */
+            padding: 20px 0; /* si besoin */
+        }
+        #sommaire a {
+            text-decoration: none; /* Enlève le soulignement */
+            color: #000;            /* Définit la couleur du texte en noir */
+            font-weight: bold;    /* Optionnel : garde un poids de police standard */
+        }
+
+        #sommaire ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #sommaire li {
+            display: flex;
+            justify-content: space-between;
+            padding: 4px 0;
+        }
+        #sommaire h3 {
+            margin-top: 180px;
+        }
+        .table-infos-vehicule {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-size: 15px;
+        }
+
+        .table-infos-vehicule th, .table-infos-vehicule td {
+            border: 1px solid #000;
+            padding: 10px;
+            text-align: left;
+            vertical-align: middle;
+        }
+
+        .table-infos-vehicule th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+            width: 20%;
+        }
+
+        .table-infos-vehicule td {
+            background-color: #fff;
+            width: 30%;
+        }
+
+        .table-infos-vehicule tr:nth-child(even) td {
+            background-color: #f9f9f9;
+        }
+
+        .table-infos-vehicule td[colspan="3"] {
+            width: auto;
+        }
+        .table-infos-pneus {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-size: 15px;
+        }
+        /* Style pour la ligne titre dans la table pneus */
+        .table-infos-pneus tr.titre-disque th {
+            background-color: #f2f2f2;  /* rouge vif */
+            color: black;               /* texte blanc */
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            padding: 12px;
+            border: 1px solid #000;     /* garde la bordure */
+        }
+
+
+        .table-infos-pneus th,
+        .table-infos-pneus td {
+            border: 1px solid #000;
+            padding: 10px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .table-infos-pneus th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+            width: 20%;
+        }
+
+        .table-infos-pneus td {
+            background-color: #fff;
+            width: 30%;
+        }
+
+        .table-infos-pneus tr:nth-child(even) td {
+            background-color: #f9f9f9;
+        }
+
+        .table-infos-pneus td[colspan="3"] {
+            width: auto;
+        }
+
+        .table-infos-pneus th[colspan="2"],
+        .table-infos-pneus td[colspan="2"] {
+            width: 50%; /* Ensure AV and AR columns have equal width */
+        }
+
+        .page-number {
+            color: #e62246;
+            font-weight: bold;
+        }
+
         .header, .footer {
             text-align: center;
             padding: 10px;
@@ -76,11 +225,70 @@
 
 
         .title {
-            font-size: 24px;
+            font-size: 44px;
             font-weight: bold;
             margin-bottom: 20px;
-            text-align: center;
+            text-align:left;
         }
+        .photo-pneu {
+            width: 95%;              /* remplit presque toute la cellule */
+            height: auto;
+            margin: 0 auto;          /* centre horizontalement */
+            border-radius: 6px;
+            display: block;
+            object-fit: cover;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .photo-soubassement {
+            width: 53%;              /* remplit presque toute la cellule */
+            height: auto;
+            margin: 0 auto;          /* centre horizontalement */
+            border-radius: 6px;
+            display: block;
+            object-fit: cover;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+        .photo-entretien {
+            width: 45%;              /* remplit presque toute la cellule */
+            height: auto;
+            margin: 0 auto;          /* centre horizontalement */
+            border-radius: 6px;
+            display: block;
+            object-fit: cover;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+        .photo-entretien-suivi {
+            width: 85%;              /* remplit presque toute la cellule */
+            height: auto;
+            margin: 0 auto;          /* centre horizontalement */
+            border-radius: 6px;
+            display: block;
+            object-fit: cover;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .photo-moteur {
+            width: 45%;              /* remplit presque toute la cellule */
+            height: auto;
+            margin: 0 auto;          /* centre horizontalement */
+            border-radius: 6px;
+            display: block;
+            object-fit: cover;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .photo-compteur-kilometrique {
+            width: 65%;              /* remplit presque toute la cellule */
+            height: auto;
+            margin: 0 auto;          /* centre horizontalement */
+            border-radius: 6px;
+            display: block;
+            object-fit: cover;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+
         .photo-exterieure {
             width: 60%;
             height: auto;
@@ -114,112 +322,813 @@
 
         .page-break {
             page-break-before: always;
-            break-before: page;
+            break-before: always;
         }
+        #liste-sommaire {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        #liste-sommaire li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px 0;
+            font-size: 16px;
+            position: relative;
+            padding-left: 20px; /* espace pour le tiret */
+        }
+
+        #liste-sommaire li::before {
+            content: "–";  /* Tiret long */
+            position: absolute;
+            left: 0;
+            color: #e62246;
+            font-weight: bold;
+        }
+
+        #liste-sommaire .sommaire-titre {
+            flex: 1; /* prend tout l'espace dispo à gauche */
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        
+
     </style>
 </head>
-<body>
-    <div class="content">
-        <h1 class="title">{{bilanVO}}</h1>
-        <div>
-            {{#each photos}}
-              <img class="photo-exterieure" src="{{this.url}}" />
-            {{/each}}
-        </div>
-        <h2>Informations du Véhicule</h2>
-        <table>
-            <tr>
-                <th>Marque</th>
-                <td>{{marque}}</td>
-            </tr>
-            <tr>
-                <th>Modèle</th>
-                <td>{{modele}}</td>
-            </tr>
-            <tr>
-                <th>Version</th>
-                <td>{{version}}</td>
-            </tr>
-            <tr>
-                <th>Année</th>
-                <td>{{annee}}</td>
-            </tr>
-            <tr>
-                <th>Énergie</th>
-                <td>{{energie}}</td>
-            </tr>
-            <tr>
-                <th>Numéro VIN</th>
-                <td>{{vin}}</td>
-            </tr>
-            <tr>
-                <th>Référence</th>
-                <td>{{reference}}</td>
-            </tr>
-        </table>
+    <body>
+        <div class="content">
+    
+        <!-- PAGE D'ACCUEIL (avant la première page-break) -->
+        <section id="page-accueil">
+            <div>
+              <h1 class="title">EXPERTISE</h1>
+              <h1 class="title">{{bilanVO}}</h1>
+              <p>Référence interne: {{reference}}</p>
+              <div class="trait"></div>
+            </div>
+          
+            <p>Rapport établi par Bonnefis Automobile, Spécialiste véhicules premium <br> Département Expertise & Préparation</p>
+          </section>
+          
+    
         <div class="page-break"></div>
-        <h2>Pneus: informations</h2>
-        <table>
-            <tr>
-                <th>État des pneus</th>
-                <td>{{etatPneus}}</td>
-            </tr>
-            <tr>
-                <th>indice de vitesse</th>
-                <td>{{indiceVitessePneus}}</td>
-            </tr>
-            <tr>
-                <th>indice de charge</th>
-                <td>{{indiceChargePneus}}</td>
-            </tr>
-            <tr>
-                <th>Photos des Pneus</th>
-                <td>
-                    {{#each photosPneusJantes}}
-                    <img class="photosPneusJantes" src="{{this.url}}" />
-                    {{/each}}
-                </td>
-            </tr>
-        </table>
-        <div class="page-break"></div>
-        <h2>Amortisseurs, disques et plaquettes</h2>
-        <table class="tableAmortisseursDisquesPlaquettes">
-            <tr>
-              <th class="textCell">Anomalie des amortisseurs</th>
-              <td class="textCell">{{anomalieAmortisseurs}}</td>
-              <th class="photosCell">Photos Amortisseurs</th>
-              <td class="photosCell">
-                {{#each photosAmortisseurs}}
-                  <img src="{{this.url}}" />
+
+         <!-- SOMMAIRE -->
+         <section id="sommaire">
+            <div class="trait"></div>
+            <h2>Sommaire</h2>
+            <ul id="liste-sommaire">
+                {{#each sommaire}}
+                  <li>
+                    <a href="#{{id}}" class="sommaire-titre">{{title}}</a>
+                  </li>
                 {{/each}}
-              </td>
-            </tr>
-            <tr>
-              <th class="textCell">État des disques et plaquettes</th>
-              <td class="textCell">{{etatDisquesPlaquettes}}</td>
-              <th class="photosCell">Photos Disques & Plaquettes</th>
-              <td class="photosCell">
-                {{#each photosDisquesPlaquettes}}
-                  <img src="{{this.url}}" />
-                {{/each}}
-              </td>
-            </tr>
-            <tr>
-              <th class="textCell">Raison du changement des disques ou des plaquettes</th>
-              <td class="textCell">{{raisonChangementDisquesPlaquettes}}</td>
-              <th class="photosCell"></th>
-              <td class="photosCell"></td>
-            </tr>
-          </table>
-          <div class="page-break"></div>
-        <h2>Dessous de voiture</h2>
-            <div class="photosDessousVoiture">
-                {{#each photosDessousVoiture}}
-                <img src="{{this.url}}" alt="Photo Dessous de voiture" />
+              </ul>
+              
+            <h3>Expertise interne & Non-responsabilité</h3>
+            <p class="disclaimer">Ce rapport technique est établi à titre informatif exclusivement par le Département Expertise & Préparation de la société BONNEFIS AUTOMOBILE. Il s’agit d’une évaluation interne réalisée selon nos propres procédures de contrôle qualité, sans intervention d’un expert judiciaire ou d’un expert indépendant agréé. En conséquence, <strong>document ne constitue pas une expertise officielle à dire d’expert</strong> et ne saurait être utilisé ou opposé à titre de référence pour la fixation d’une valeur vénale, d’assurance ou contentieuse du véhicule. Il ne remplace pas un rapport d'expertise agréé tel que requis dans le cadre d’un sinistre, d’une procédure contradictoire, ou d’une évaluation patrimoniale. La responsabilité de BONNEFIS AUTOMOBILE ne saurait être engagée au-delà de la vérification technique effectuée en l’état et dans le cadre des moyens normaux mis en œuvre par ses équipes au jour de la présente.</p>
+            <div class="page-break"></div>
+          </section>
+          
+    
+        <!-- INFORMATIONS DU VÉHICULE -->
+        <section id="infos-vehicule" data-sommaire="Informations du Véhicule">
+            <div class="trait"></div>
+            <h2>Informations du Véhicule</h2>
+            <div>
+                {{#each photos}}
+                    <img class="photo-exterieure" src="{{this.url}}" />
                 {{/each}}
             </div>
-          <div class="page-break"></div>
-    </div>
+            <table class="table-infos-vehicule">
+                <tr>
+                    <th>Marque</th><td>{{marque}}</td>
+                    <th>Modèle</th><td>{{modele}}</td>
+                </tr>
+                <tr>
+                    <th>Version</th><td colspan="3">{{version}}</td>
+                </tr>
+                <tr>
+                    <th>Année</th><td>{{annee}}</td>
+                    <th>Kilométrage</th><td>{{kilometrage}}</td>
+                </tr>
+                <tr>
+                    <th>Énergie</th><td>{{energie}}</td>
+                    <th>Boîte</th><td>{{boite}}</td>
+                </tr>
+                <tr>
+                    <th>Puissance</th><td>{{puissance}}</td>
+                    <th>Puissance fiscale</th><td>{{puissance_fiscale}}</td>
+                </tr>
+                <tr>
+                    <th>Taux de Co2</th><td>{{co2}}</td>
+                    <th>Pays d’origine</th><td>{{pays_origine}}</td>
+                </tr>
+                <tr>
+                    <th>Numéro de série</th><td>{{vin}}</td>
+                    <th>Référence</th><td>{{reference}}</td>
+                </tr>
+            </table>
+        </section>
+        
+    
+        <div class="page-break"></div>
+    
+        <!-- PNEUS : INFORMATIONS -->
+        <section id="infos-pneus" data-sommaire="Pneus: informations">
+            <div class="trait"></div>
+            <h2>PNEUS: INFORMATIONS</h2>
+            <table class="table-infos-pneus">
+                <!-- Ligne infos générales -->
+                <tr>
+                    <th>Marque</th>
+                    <td>{{pneusMarqueIdentique}}</td>
+                    <th>État des pneus</th>
+                    <td>{{etatPneus}}</td>
+                </tr>
+            
+                <!-- Ligne titres AVG + AVD -->
+                <tr>
+                    <th colspan="2">AVG</th>
+                    <th colspan="2">AVD</th>
+                </tr>
+                <!-- Ligne images AVG + AVD -->
+                <tr>
+                    <td colspan="2">
+                        {{#each photos}}
+                            <img src="{{this.url}}" alt="AVG" class="photo-pneu" />
+                        {{/each}}
+                    </td>
+                    <td colspan="2">
+                        {{#each photos}}
+                            <img src="{{this.url}}" alt="AVD" class="photo-pneu" />
+                        {{/each}}
+                    </td>
+                </tr>
+            
+                <!-- Ligne titres ARG + ARD -->
+                <tr>
+                    <th colspan="2">ARG</th>
+                    <th colspan="2">ARD</th>
+                </tr>
+                <!-- Ligne images ARG + ARD -->
+                <tr>
+                    <td colspan="2">
+                        {{#each photos}}
+                            <img src="{{this.url}}" alt="ARG" class="photo-pneu" />
+                        {{/each}}
+                    </td>
+                    <td colspan="2">
+                        {{#each photos}}
+                            <img src="{{this.url}}" alt="ARD" class="photo-pneu" />
+                        {{/each}}
+                    </td>
+                </tr>
+            
+                <!-- Pneus à changer -->
+                <tr>
+                    <th>Pneus à changer:</th>
+                    <td colspan="3">{{pneusAChanger}}</td>
+                </tr>
+            </table>
+            <div class="page-break"></div>
+            <table class="table-infos-pneus">
+                <tr>
+                    <th colspan="2">Pneus autorisés</th>
+                    <th colspan="2">Marque et modèle des pneus</th>
+                </tr>
+                <!-- Ligne images ARG + ARD -->
+                <tr>
+                    <td colspan="2">
+                        {{#each photos}}
+                            <img src="{{this.url}}" alt="ARG" class="photo-pneu" />
+                        {{/each}}
+                    </td>
+                    <td colspan="2">
+                        {{#each photos}}
+                            <img src="{{this.url}}" alt="ARD" class="photo-pneu" />
+                        {{/each}}
+                    </td>
+                </tr>
+            
+                <!-- Indices -->
+                <tr>
+                    <th>Indice de vitesse</th><td>{{indiceVitessePneus}}</td>
+                    <th>Indice de charge</th><td>{{indiceChargePneus}}</td>
+                </tr>
+            </table>
+            
+            
+        </section>
+        
+        
+        
+        <div class="page-break"></div>
+    
+        <!-- DISQUES ET PLAQUETTES -->
+        <section id="amortisseurs-disques-plaquettes" data-sommaire="Disques et plaquettes">
+            <div class="trait"></div>
+            <h2>Disques et plaquettes</h2>
+            <table class="table-infos-pneus">
+        
+                <!-- Ligne invisible pour forcer 4 colonnes -->
+                <tr style="display: none;">
+                    <th></th><th></th><th></th><th></th>
+                </tr>
+        
+                <tr class="titre-disque">
+                    <th colspan="4">Disques</th>
+                </tr>
+        
+                <!-- Etat disques et plaquettes avec 4 colonnes réelles -->
+                <tr>
+                    <th>État:</th>
+                    <td colspan="3">{{etatDisquesPlaquettes}}</td>
+                </tr>
+        
+                <!-- Ligne titres AVG + AVD -->
+                <tr>
+                    <th colspan="2">AVG</th>
+                    <th colspan="2">AVD</th>
+                </tr>
+        
+                <!-- Ligne images AVG + AVD -->
+                <tr>
+                    <td colspan="2">
+                        {{#each photos}}
+                            <img src="{{this.url}}" alt="AVG" class="photo-pneu" />
+                        {{/each}}
+                    </td>
+                    <td colspan="2">
+                        {{#each photos}}
+                            <img src="{{this.url}}" alt="AVD" class="photo-pneu" />
+                        {{/each}}
+                    </td>
+                </tr>
+        
+                <!-- Ligne titres ARG + ARD -->
+                <tr>
+                    <th colspan="2">ARG</th>
+                    <th colspan="2">ARD</th>
+                </tr>
+        
+                <!-- Ligne images ARG + ARD -->
+                <tr>
+                    <td colspan="2">
+                        {{#each photos}}
+                            <img src="{{this.url}}" alt="ARG" class="photo-pneu" />
+                        {{/each}}
+                    </td>
+                    <td colspan="2">
+                        {{#each photos}}
+                            <img src="{{this.url}}" alt="ARD" class="photo-pneu" />
+                        {{/each}}
+                    </td>
+                </tr>
+            </table>
+            <div class="page-break"></div>
+            <table class="table-infos-pneus">
+        
+                <!-- Ligne invisible pour forcer 4 colonnes -->
+                <tr style="display: none;">
+                    <th></th><th></th><th></th><th></th>
+                </tr>
+        
+                <tr class="titre-disque">
+                    <th colspan="4">Plaquettes</th>
+                </tr>
+        
+                <!-- Etat disques et plaquettes avec 4 colonnes réelles -->
+                <tr>
+                    <th>État:</th>
+                    <td colspan="3">{{etatDisquesPlaquettes}}</td>
+                </tr>
+        
+                <!-- Ligne titres AVG + AVD -->
+                <tr>
+                    <th colspan="2">AVG</th>
+                    <th colspan="2">AVD</th>
+                </tr>
+        
+                <!-- Ligne images AVG + AVD -->
+                <tr>
+                    <td colspan="2">
+                        {{#each photos}}
+                            <img src="{{this.url}}" alt="AVG" class="photo-pneu" />
+                        {{/each}}
+                    </td>
+                    <td colspan="2">
+                        {{#each photos}}
+                            <img src="{{this.url}}" alt="AVD" class="photo-pneu" />
+                        {{/each}}
+                    </td>
+                </tr>
+        
+                <!-- Ligne titres ARG + ARD -->
+                <tr>
+                    <th colspan="2">ARG</th>
+                    <th colspan="2">ARD</th>
+                </tr>
+        
+                <!-- Ligne images ARG + ARD -->
+                <tr>
+                    <td colspan="2">
+                        {{#each photos}}
+                            <img src="{{this.url}}" alt="ARG" class="photo-pneu" />
+                        {{/each}}
+                    </td>
+                    <td colspan="2">
+                        {{#each photos}}
+                            <img src="{{this.url}}" alt="ARD" class="photo-pneu" />
+                        {{/each}}
+                    </td>
+                </tr>
+            </table>
+        </section>
+        
+    
+        <div class="page-break"></div>
+        <!-- AMORTISSEURS -->
+        <section id="amortisseurs" data-sommaire="Amortisseurs">
+            <div class="trait"></div>
+            <h2>Amortisseurs</h2>
+            <table class="table-infos-pneus">
+        
+                <!-- Ligne invisible pour forcer 4 colonnes -->
+                <tr style="display: none;">
+                    <th></th><th></th><th></th><th></th>
+                </tr>
+        
+                <tr class="titre-disque">
+                    <th colspan="4">Plaquettes</th>
+                </tr>
+        
+                <!-- Etat disques et plaquettes avec 4 colonnes réelles -->
+                <tr>
+                    <th>État:</th>
+                    <td colspan="3">{{etatDisquesPlaquettes}}</td>
+                </tr>
+        
+                <!-- Ligne titres AVG + AVD -->
+                <tr>
+                    <th colspan="2">AVG</th>
+                    <th colspan="2">AVD</th>
+                </tr>
+        
+                <!-- Ligne images AVG + AVD -->
+                <tr>
+                    <td colspan="2">
+                        {{#each photos}}
+                            <img src="{{this.url}}" alt="AVG" class="photo-pneu" />
+                        {{/each}}
+                    </td>
+                    <td colspan="2">
+                        {{#each photos}}
+                            <img src="{{this.url}}" alt="AVD" class="photo-pneu" />
+                        {{/each}}
+                    </td>
+                </tr>
+        
+                <!-- Ligne titres ARG + ARD -->
+                <tr>
+                    <th colspan="2">ARG</th>
+                    <th colspan="2">ARD</th>
+                </tr>
+        
+                <!-- Ligne images ARG + ARD -->
+                <tr>
+                    <td colspan="2">
+                        {{#each photos}}
+                            <img src="{{this.url}}" alt="ARG" class="photo-pneu" />
+                        {{/each}}
+                    </td>
+                    <td colspan="2">
+                        {{#each photos}}
+                            <img src="{{this.url}}" alt="ARD" class="photo-pneu" />
+                        {{/each}}
+                    </td>
+                </tr>
+            </table>
+        </section>
 
-</body>
+        <div class="page-break"></div>
+    
+        <!-- SOUBASSEMENT -->
+        <section id="soubassement" data-sommaire="Soubassement">
+            <div class="trait"></div>
+            <h2>Soubassement</h2>
+            <table class="table-infos-pneus">
+        
+                <!-- Ligne invisible pour forcer 4 colonnes -->
+                <tr style="display: none;">
+                    <th></th><th></th>
+                </tr>
+        
+                <tr class="titre-disque">
+                    <th colspan="2">Soubassement</th>
+                </tr>
+        
+                <!-- Ligne titres AVG + AVD -->
+                <tr>
+                    <th colspan="2">AV</th>
+                </tr>
+        
+                <!-- Ligne images AVG + AVD -->
+                <tr>
+                    <td colspan="2">
+                        {{#each photos}}
+                            <img src="{{this.url}}" alt="AVG" class="photo-soubassement" />
+                        {{/each}}
+                    </td>
+                </tr>
+
+                <tr>
+                    <th colspan="2">AR</th>
+                </tr>
+
+                <!-- Ligne images ARG + ARD -->
+                <tr>
+                    <td colspan="2">
+                        {{#each photos}}
+                            <img src="{{this.url}}" alt="ARG" class="photo-soubassement" />
+                        {{/each}}
+                    </td>
+
+                </tr>
+            </table>
+        </section>
+    
+        <div class="page-break"></div>
+
+        <!-- Extérieur -->
+        <section id="exterieur" data-sommaire="Extérieur">
+            <div class="trait"></div>
+            <h2>Extérieur</h2>
+            <table class="table-infos-pneus">
+        
+                <!-- Ligne invisible pour forcer 4 colonnes -->
+                <tr style="display: none;">
+                    <th></th><th></th>
+                </tr>
+        
+                <tr class="titre-disque">
+                    <th colspan="2">Compartiment Moteur</th>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        {{#each photos}}
+                            <img src="{{this.url}}" alt="AVG" class="photo-moteur" />
+                        {{/each}}
+                    </td>
+                </tr>
+            </table>
+            <table class="table-infos-pneus" style="width: 100%; border-collapse: collapse;">
+
+                <!-- Ligne de titre principale -->
+                <tr class="titre-disque">
+                    <th colspan="3" >Expertise éléments extérieurs</th>
+                </tr>
+            
+                <!-- Ligne 1 -->
+                <tr>
+                    <th style="width: 20%;">Essuie-glaces</th>
+                    <td style="width: 25%; font-size: 12px;">{{etatEssuiesGlaces}}</td>
+                    <td style="width: 55%; font-size: 12px;"></td>
+                </tr>
+            
+                <!-- Ligne 2 -->
+                <tr>
+                    <th style="width: 20%;">Hayon électrique</th>
+                    <td style="width: 25%; font-size: 12px;">{{anomalieHayonElectrique}}</td>
+                    <td style="width: 55%; font-size: 12px;">{{explicationsAnomalieHayonElectrique}}</td>
+                </tr>
+
+                <!-- Ligne 3 -->
+                <tr>
+                    <th style="width: 20%;">Toit ouvrant</th>
+                    <td style="width: 25%; font-size: 12px;">{{anomalieToitOuvrant}}</td>
+                    <td style="width: 55%; font-size: 12px;">{{explicationsAnomalieToitOuvrant}}</td>
+                </tr>
+
+                <!-- Ligne 4 -->
+                <tr>
+                    <th style="width: 20%;">Test des vitres</th>
+                    <td style="width: 25%; font-size: 12px;">{{anomalieVitres}}</td>
+                    <td style="width: 55%; font-size: 12px;">{{explicationsAnomalieVitres}}</td>
+                </tr>
+
+                <!-- Ligne 5 -->
+                <tr>
+                    <th style="width: 20%;">Rétroviseurs</th>
+                    <td style="width: 25%; font-size: 12px;">{{anomalieRetroviseurs}}</td>
+                    <td style="width: 55%; font-size: 12px;">{{explicationsAnomalieRetroviseurs}}</td>
+                </tr>
+
+                <!-- Ligne 6 -->
+                <tr>
+                    <th style="width: 20%;">Radars & caméras</th>
+                    <td style="width: 25%; font-size: 12px;">{{anomalieRadarsCameras}}</td>
+                    <td style="width: 55%; font-size: 12px;">{{explicationsAnomalieRadarsCameras}}</td>
+                </tr>
+
+                <!-- Ligne 7 -->
+                <tr>
+                    <th style="width: 20%;">Éclairage extérieur</th>
+                    <td style="width: 25%; font-size: 12px;">{{anomalieEclairageExterieur}}</td>
+                    <td style="width: 55%; font-size: 12px;">{{explicationsAnomalieEclairageExterieur}}</td>
+                </tr>
+
+                <!-- Ligne 8 -->
+                <tr>
+                    <th style="width: 20%;">Trappe à carburant</th>
+                    <td style="width: 25%; font-size: 12px;">{{anomalieTrappeCarburant}}</td>
+                    <td style="width: 55%; font-size: 12px;">{{explicationsAnomalieTrappeCarburant}}</td>
+                </tr>
+            
+            </table>
+        </section>
+        <div class="page-break"></div>
+        <!-- Intérieur -->
+        <section id="interieur" data-sommaire="Intérieur">
+            <div class="trait"></div>
+            <h2>Extérieur</h2>
+            <table class="table-infos-pneus">
+        
+                <!-- Ligne invisible pour forcer 4 colonnes -->
+                <tr style="display: none;">
+                    <th></th><th></th>
+                </tr>
+        
+                <tr class="titre-disque">
+                    <th colspan="2">Compteur kilométrique au moment de l'expertise</th>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        {{#each photoCompteurKilometrique}}
+                            <img src="{{this.url}}" alt="AVG" class="photo-compteur-kilometrique" />
+                        {{/each}}
+                    </td>
+                </tr>
+            </table>
+            <table class="table-infos-pneus" style="width: 100%; border-collapse: collapse;">
+
+                <!-- Ligne de titre principale -->
+                <tr class="titre-disque">
+                    <th colspan="4" >Expertise éléments extérieurs</th>
+                </tr>
+            
+                <tr>
+                    <th>GPS intégré</th><td>{{gps}}</td>
+                    <th>ACC - régulateur adaptatif
+                        </th><td>{{acc}}</td>
+                </tr>
+                <tr>
+                    <th>Double de clé & pile</th><td>{{doubleClePresent}}</td>
+                    <th>Cable de recharge</th><td>{{cableRechargePresent}}</td>
+                </tr>
+                <tr>
+                    <th>Plage arrière</th><td>{{plageArrierePresente}}</td>
+                    <th>Écrou antivol</th><td>{{ecrouAntivolPresent}}</td>
+                </tr>
+                <tr>
+                    <th>Sièges chauffants</th><td>{{siegesChauffants}}</td>
+                    <th>Sièges électriques</th><td>{{siegesElectriques}}</td>
+                </tr>
+                <tr>
+                    <th>Chargeur induction</th><td>{{chargeurInduction}}</td>
+                    <th>Hauts parleurs</th><td>{{hautsParleurs}}</td>
+                </tr>
+                <tr>
+                    <th>Tête haute</th><td>{{affichageTeteHaute}}</td>
+                    <th>Commandes volant</th><td>{{commandeAuVolant}}</td>
+                </tr>
+            
+            </table>
+        </section>
+        <div class="page-break"></div>
+
+        <!-- SÉCURITÉ -->
+        <section id="securite" data-sommaire="Sécurité">
+            <div class="trait"></div>
+            <h2>Sécurité</h2>
+        
+            <table class="table-infos-pneus" style="width: 100%; border-collapse: collapse;">
+                
+                <!-- Ligne avec 2 colonnes : AV / AR -->
+                <tr>
+                    <th style="width: 50%;">Écrou antivol</th>
+                    <td style="width: 50%;">{{ecrouAntivolPresent}}</td>
+                </tr>
+        
+                <!-- Ligne suivante avec 1 seule colonne -->
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        {{#each photoEcrouAntivol}}
+                            <img src="{{this.url}}" alt="Photo sécurité" class="photo-soubassement" />
+                        {{/each}}
+                    </td>
+                </tr>
+                <tr>
+                    <th style="width: 50%;">Roue de secours/Kit anti crevaison</th>
+                    <td style="width: 50%;">{{roueSecoursKitCrevaisonRunflat}}</td>
+                </tr>
+        
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        {{#each photoRoueSecoursKitCrevaisonRunflat}}
+                            <img src="{{this.url}}" alt="Photo sécurité" class="photo-soubassement" />
+                        {{/each}}
+                    </td>
+                </tr>
+        
+            </table>
+        </section>
+        <div class="page-break"></div>
+
+        <!-- ENTRETIEN -->
+        <section id="entretien" data-sommaire="Entretien">
+            <div class="trait"></div>
+            <h2>Entretien</h2>
+        
+            <table class="table-infos-pneus" style="width: 100%; border-collapse: collapse;">
+        
+                <!-- Ligne 1 : Titre -->
+                <tr>
+                    <th colspan="4" style="text-align: center; padding: 10px; font-size: 18px; font-weight: bold">État de l'entretien</th>
+                </tr>
+        
+                <!-- Ligne 2 -->
+                <tr>
+                    <th>Vidange moteur</th>
+                    <td>{{etatVidangeMoteur}}</td>
+                    <th>Vidange (autre)</th>
+                    <td>{{etatVidangeAutres}}</td>
+                </tr>
+        
+                <!-- Ligne 3 -->
+                <tr>
+                    <th>Niveaux</th>
+                    <td>{{niveauxAFaire}}</td>
+                    <th>Pressions pneus</th>
+                    <td>{{pressionPneus}}</td>
+                </tr>
+        
+                <!-- Ligne 4 -->
+                <tr>
+                    <th>Bougies</th>
+                    <td>{{etatBougies}}</td>
+                    <th>Courroie et distribution</th>
+                    <td>{{etatCourroieDistribution}}</td>
+                </tr>
+        
+                <!-- Ligne 5 : Photo pleine largeur -->
+                <tr>
+                    <td colspan="4" style="text-align: center;">
+                        {{#each photos}}
+                            <img src="{{this.url}}" alt="Photo sécurité" class="photo-entretien" />
+                        {{/each}}
+                    </td>
+                </tr>
+        
+                <!-- Ligne 6 : Photo pleine largeur -->
+                <tr>
+                    <td colspan="4" style="text-align: center;">
+                        {{#each photos}}
+                            <img src="{{this.url}}" alt="Photo sécurité" class="photo-entretien" />
+                        {{/each}}
+                    </td>
+                </tr>
+        
+            </table>
+        </section>
+        <div class="page-break"></div>
+
+        <!-- HISTORIQUE ENTRETIEN -->
+        <section id="historique-entretien" data-sommaire="Historique d'entretien">
+            <div class="trait"></div>
+            <h2>Historique d'entretien</h2>
+        
+            <table class="table-infos-pneus" style="width: 100%; border-collapse: collapse;">
+        
+                <!-- Ligne 1 : Titre -->
+                <tr>
+                    <th colspan="4" style="text-align: center; padding: 10px; font-size: 18px; font-weight: bold">Historique d'entretien</th>
+                </tr>
+        
+                <!-- Ligne 2 : 4 colonnes d'infos -->
+                <tr>
+                    <th>Suivi disponible</th>
+                    <td>Oui suivi complet</td>
+                    <th>Entretiens</th>
+                    <td>{{entretiens}}</td>
+                </tr>
+        
+                <!-- Ligne 3 : 2 colonnes d’images -->
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        {{#each photos}}
+                            <img src="{{this.url}}" alt="Photo sécurité" class="photo-entretien-suivi" />
+                        {{/each}}
+                    </td>
+                    <td colspan="2" style="text-align: center;">
+                        {{#each photos}}
+                            <img src="{{this.url}}" alt="Photo sécurité" class="photo-entretien-suivi" />
+                        {{/each}}
+                </tr>
+        
+                <!-- Ligne 4 : 2 colonnes d’images -->
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        {{#each photosvide}}
+                            <img src="{{this.url}}" alt="Photo sécurité" class="photo-entretien-suivi" />
+                        {{/each}}
+                    <td colspan="2" style="text-align: center;">
+                        {{#each photosvide}}
+                            <img src="{{this.url}}" alt="Photo sécurité" class="photo-entretien-suivi" />
+                        {{/each}}
+                    </td>
+                </tr>
+        
+                <!-- Ligne 5 : 2 colonnes d’images -->
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        {{#each photosvide}}
+                            <img src="{{this.url}}" alt="Photo sécurité" class="photo-entretien-suivi" />
+                        {{/each}}
+                    </td>
+                    <td colspan="2" style="text-align: center;">
+                        {{#each photosvide}}
+                            <img src="{{this.url}}" alt="Photo sécurité" class="photo-entretien-suivi" />
+                        {{/each}}
+                    </td>
+                </tr>
+        
+            </table>
+        </section>
+        <div class="page-break"></div>
+
+        <!-- ESSAI ROUTIER -->
+        <section id="essai-routier" data-sommaire="Essai routier">
+            <div class="trait"></div>
+            <h2>Essai routier</h2>
+        
+            <table class="table-infos-pneus" style="width: 100%; border-collapse: collapse;">
+        
+                <!-- Ligne 1 : Titre -->
+                <tr>
+                    <th colspan="2" style="text-align: center; padding: 10px; font-size: 18px; font-weight: bold">Essai routier</th>
+                </tr>
+        
+                <!-- Ligne 2 -->
+                <tr>
+                    <th style="width: 30%; font-weight: bold;">Description</th>
+                    <td style="width: 70%; text-align: left;">{{description}}</td>
+                </tr>
+        
+                <!-- Ligne 3 -->
+                <tr>
+                    <th style="width: 30%; font-weight: bold;">Résultat de l'essai</th>
+                    <td style="width: 70%; text-align: left;">Conforme aux attente du véhicule <br>Aucun défaut dynamique n'est constaté</td>
+                </tr>
+            </table>
+            <table class="table-infos-pneus" style="width: 100%; border-collapse: collapse;">
+        
+                <!-- Ligne 1 : Titre -->
+                <tr>
+                    <th colspan="2" style="text-align: center; padding: 10px; font-size: 18px; font-weight: bold">Modifications constatées</th>
+                </tr>
+        
+                <!-- Ligne 2 -->
+                <tr>
+                    <th style="width: 50%; font-weight: bold;">Éléments modifiés sur le véhicule</th>
+                    <td style="width: 50%; text-align: left;">{{elementsModifiesVehicule}}</td>
+                </tr>
+        
+                <!-- Ligne 3 -->
+                <tr>
+                    <td style="width: 50%; font-weight: bold;">
+                        {{#each photosvide}}
+                            <img src="{{this.url}}" alt="Photo sécurité" class="photo-entretien-suivi" />
+                        {{/each}}
+                    </td>
+                    <td style="width: 50%;">
+                        {{#each photosvide}}
+                            <img src="{{this.url}}" alt="Photo sécurité" class="photo-entretien-suivi" />
+                        {{/each}}
+                    </td>
+                </tr>
+            </table>
+        </section>
+        
+        
+        
+        
+    
+        </div>
+    </body>
+
 </html>

@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
-import { chromium } from 'playwright';
+import { chromium as playwrightChromium } from 'playwright-core';
+import chromium from '@sparticuz/chromium';
 import Handlebars from 'handlebars';
 
 const logoPath = path.resolve('./public/logo.png');
@@ -9,11 +10,13 @@ const logoBase64 = logoData.toString('base64');
 const logoMimeType = 'image/png';
 
 async function launchBrowser() {
-  return chromium.launch({
-    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+  return playwrightChromium.launch({
+    args: chromium.args,
+    executablePath: await chromium.executablePath(),
     headless: true,
   });
 }
+
 
 export async function generatePDF(data) {
   const templatePath = path.resolve('./templates/bilanVO.html');

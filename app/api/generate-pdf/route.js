@@ -1,11 +1,13 @@
 import { getRecordById, updateRecord } from '@/lib/airtable';
 import { normalizeData } from '@/lib/utils';
-import { generatePDF } from '@/lib/pdf';
 import { uploadToDrive } from '@/lib/drive';
 import { basicAuth } from '@/lib/auth';
 
 export async function POST(request) {
     console.log('--- Début de la requête POST ---');
+
+    // Import dynamique ici
+    const { generatePDF } = await import('@/app/server/lib/pdf');
 
     // Vérification de l'authentification basique
     const authResponse = basicAuth(request);

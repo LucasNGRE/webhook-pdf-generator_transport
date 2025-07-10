@@ -1,6 +1,6 @@
 import { getRecordById } from '@/lib/airtable';
 import { normalizeData } from '@/lib/utils';
-import { generatePDF } from '@/lib/pdf';
+import { generatePDF } from '@/app/server/lib/pdf';
 
 export async function GET(request) {
   const { searchParams } = new URL(request.url);

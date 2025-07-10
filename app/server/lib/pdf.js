@@ -58,7 +58,7 @@ export async function generatePDF(data) {
   const page2 = await browser2.newPage();
   await page2.setContent(finalHtml, { waitUntil: 'networkidle' });
 
-  await page2.evaluate(({ tocItems }) => {
+  await page2.evaluate((tocItems) => {
     tocItems.forEach((item) => {
       const link = document.querySelector(`#sommaire a[href="#${item.id}"]`);
       const pageSpan = link?.nextElementSibling;
@@ -66,7 +66,7 @@ export async function generatePDF(data) {
         pageSpan.textContent = item.page;
       }
     });
-  }, { tocItems });
+  }, tocItems);
   
 
   const pdfBuffer = await page2.pdf({

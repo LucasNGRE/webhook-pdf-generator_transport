@@ -32,6 +32,7 @@ const headerTemplate = `
 
 async function launchBrowser() {
   const executablePath = await chromium.executablePath;
+  console.log("Chromium executablePath:", executablePath);
 
   return puppeteer.launch({
     args: chromium.args,

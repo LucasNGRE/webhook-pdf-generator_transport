@@ -60,7 +60,7 @@ export async function POST(request) {
         });
 
     } catch (error) {
-        console.error('❌ Error generating/uploading PDF:', error);
+        console.error('❌ Error generating/uploading PDF:', error.message, error.stack);
         return new Response('Error generating/uploading PDF', { status: 500 });
     }
 }

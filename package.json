@@ -16,8 +16,7 @@
     "handlebars": "^4.7.8",
     "mime-types": "^3.0.1",
     "next": "15.3.4",
-    "puppeteer": "^10.4.0",
-    "puppeteer-core": "^10.4.0",
+    "puppeteer": "^19.11.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },

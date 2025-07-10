@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
-import puppeteer from 'puppeteer';
+import chromium from 'chrome-aws-lambda';
+import puppeteer from 'puppeteer-core';
 import Handlebars from 'handlebars';
 
 const logoPath = path.resolve('./public/logo.png');
@@ -30,9 +31,13 @@ const headerTemplate = `
 `;
 
 async function launchBrowser() {
+  const executablePath = await chromium.executablePath;
+
   return puppeteer.launch({
-    headless: true,
-    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    args: chromium.args,
+    defaultViewport: chromium.defaultViewport,
+    executablePath,
+    headless: chromium.headless,
   });
 }
 

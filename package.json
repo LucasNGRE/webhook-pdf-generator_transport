@@ -10,13 +10,13 @@
   },
   "dependencies": {
     "airtable": "^0.12.2",
-    "chrome-aws-lambda": "^10.1.0",
     "dotenv": "^17.0.1",
     "googleapis": "^150.0.1",
     "handlebars": "^4.7.8",
     "mime-types": "^3.0.1",
     "next": "15.3.4",
-    "puppeteer": "^19.11.1",
+    "puppeteer-core": "^19.11.1",
+    "chrome-aws-lambda": "^10.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },

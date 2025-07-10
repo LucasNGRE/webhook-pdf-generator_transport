@@ -31,7 +31,7 @@ const headerTemplate = `
 `;
 
 async function launchBrowser() {
-  const executablePath = await chromium.executablePath;
+  const executablePath = await chromium.executablePath || '/usr/bin/chromium-browser';
   console.log("Chromium executablePath:", executablePath);
 
   return puppeteer.launch({
